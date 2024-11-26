@@ -6,7 +6,7 @@ Experimenting with the development of a monte-carlo approach to the pricing of c
  - BSM.py - an implementation of the black-scholes model (not mine) to benchmark of monte-carlo performance. See file for credit.
 
 This work has been a key aid in my education in stochastic calculus, and has supplemented the following learning objectives:
-- derivation of Ito's Lemma (below) from the Taylor series expansion of a function f(S(t), t) to second order terms.
+- derivation of Ito's Lemma (below) from the Taylor series expansion of a function $f(S_{t}, t)$ to second order terms.
 $$df(S_{t}, t) = \left( \frac{\partial f}{\partial t} + \mu \frac{\partial f}{\partial S_t} + \frac{1}{2} \sigma^2 \frac{\partial^2 f}{\partial S_t^2} \right) dt + \sigma \frac{\partial f}{\partial S_t} dW_t$$
  
 - application of Ito's Lemma to $f(S_t, t)=ln(S_t)$ and implementation in code.
