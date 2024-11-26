@@ -10,3 +10,9 @@ This work has been a key aid in my education in stochastic calculus, and has sup
 $$df(S_{t}, t) = \left( \frac{\partial f}{\partial t} + \mu \frac{\partial f}{\partial S_t} + \frac{1}{2} \sigma^2 \frac{\partial^2 f}{\partial S_t^2} \right) dt + \sigma \frac{\partial f}{\partial S_t} dW_t$$
  
 - application of Ito's Lemma to $f(S_t, t)=ln(S_t)$ and implementation in code.
+
+The output of the mc_pricer.py script is assembled into three plots.
+
+![$N$ paths produced from an asset with a starting value of 100 a.u.](figures/paths.png)
+![Histogram of payoffs](figures/hist.png)
+![The MC function converges to the BSM as $N \to \infty$](figures/convergence.png)
