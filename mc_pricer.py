@@ -63,14 +63,14 @@ if __name__ == '__main__':
 
     print(f"Mean payoff: {payoffs.mean()}\nOption Price: {op}")
     plt.plot(S, linewidth=0.5, alpha=0.6)
-    plt.plot(S.mean(1), color="red", linewidth=2, label="Average Path")
-    plt.xlabel("Months")
+    plt.plot(S.mean(1), color="red", linewidth=2, label="Mean Path")
+    plt.xlabel("Steps")
     plt.ylabel("Asset Price, a.u.")
     plt.legend()
     plt.figure()
-    plt.hist(payoffs, bins=5, edgecolor="black")
+    plt.hist(payoffs, bins=10, edgecolor="black")
     plt.title("Distribution of Payoffs")
-    plt.xlabel("Payoff")
+    plt.xlabel("Payoff, a.u.")
     plt.ylabel("Frequency")
     
     # Plotting payoff against N to check convergence
@@ -82,14 +82,15 @@ if __name__ == '__main__':
     for N_sim in range(min_sim, max_sim+1, 1):
         if N_sim % 100 == 0 or N_sim == min_sim or N_sim == max_sim: print(f"{N_sim} / {max_sim}")
         _, payoffs, _ = mc_pricer_optimised(T, steps, N_sim, volatility, drift, strike, S0, r)
-        call = black_scholes_call(S0,strike,T,r,q,volatility)
+        call = BS_CALL(S0,strike,T,r-q,volatility)
         results.append(payoffs.mean())
         calls.append(call)
     
     plt.plot(range(min_sim, max_sim+1, 1), results)
     plt.plot(range(min_sim, max_sim+1, 1), calls, color = 'k')
     plt.title("Convergence of Option Price with N")
-    plt.xlabel("Number of Simulations")
-    plt.ylabel("Payoff")
+    plt.legend(["Monte-Carlo", "Black-Scholes"])
+    plt.xlabel("Number of Simulations, N")
+    plt.ylabel("Payoff, a.u.")
     
     plt.show()
