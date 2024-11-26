@@ -13,11 +13,14 @@ $$df(S_{t}, t) = \left( \frac{\partial f}{\partial t} + \mu \frac{\partial f}{\p
 
 The output of the mc_pricer.py script is assembled into three plots.
 
-*$N$ paths produced from an asset with a starting value of 100 a.u.*
+*N paths produced from an asset with a starting value of 100 a.u.*
+
 ![](figures/paths.png)
 
 *Histogram of payoffs*
+
 ![](figures/hist.png)
 
-*The MC function converges to the BSM as $N \to \infty$*
+*The MC function converges to the BSM as N increases*
+
 ![](figures/convergence.png)
