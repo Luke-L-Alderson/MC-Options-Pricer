@@ -1,6 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
-from BSM import black_scholes_call, BS_CALL
+from BSM import BS_CALL
 
 # Initial version of the mc_pricing function before optimisation
 def mc_pricer(T, steps, N, volatility, drift, strike, S0, r, call = True):
@@ -44,8 +44,7 @@ def mc_pricer_optimised(T, steps, N, volatility, drift, strike, S0, r, call = Tr
     return S, payoffs, option_price
 
 if __name__ == '__main__':
-    
-    # Volatility and drift to be sourced empirically from pricing sources
+
     volatility = 0.25
     r = 0.05
     q = 0.02
