@@ -1,9 +1,9 @@
 # Monte-Carlo (MC) Options Pricer
-Experimenting with the development of a monte-carlo approach to the pricing of call and put options for personal development in the field of quantiive finance. 
+Experimenting with the development of a monte-carlo approach to the pricing of call and put options for personal development in the field of quantitative finance. 
 
- There are two main files in this repo:
+ There are two main files in this repository:
  - mc_pricer.py - the main script and mc_pricer function (optimised and non-optimised versions)
- - BSM.py - an implementation of the black-scholes model (not mine) to benchmark of monte-carlo performance. See file for credit.
+ - BSM.py - an implementation of the Black-Scholes model (not mine) to benchmark monte-carlo performance. See file for credit.
 
 This work has been a key aid in my education in stochastic calculus, and has supplemented the following learning objectives:
 - derivation of Ito's Lemma (below) from the Taylor series expansion of a function $f(S_{t}, t)$ to second order terms.
